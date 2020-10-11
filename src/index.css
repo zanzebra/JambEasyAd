@@ -36,6 +36,61 @@ body {
 * {
   box-sizing: border-box;
 }
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: absolute;
+  transition: 200ms;
+  transition-timing-function: ease-out;
+  animation: cursorAnim 0.5s infinite alternate;
+}
+.cursor:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border: 8px solid gray;
+  border-radius: 50%;
+  opacity: 0.5;
+  top: -9px;
+  left: -9px;
+  animation: cursorAnim2 0.5s infinite alternate;
+}
+@keyframes cursorAnim {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.7);
+  }
+}
+
+@keyframes cursorAnim2 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.4);
+  }
+}
+.expand {
+  animation: cursorAnim3 0.5s infinite alternate;
+  border: 1px solid red;
+}
+@keyframes cursorAnim3 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
 .aws-btn {
   --button-default-height: 48px;
   --button-default-font-size: 14px;
@@ -47,12 +102,121 @@ body {
 }
 .container-fixed {
   position: fixed;
+  z-index: -10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #222222;
+}
+.container-fixed2 {
+  position: fixed;
   z-index: -1;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #480792;
+  background-color: #000000;
+}
+.container-fixed2 .svg-left {
+  position: absolute;
+  left: 20px;
+  height: 300px;
+  width: 300px;
+  top: 100px;
+}
+.container-fixed2 .svg-right {
+  position: absolute;
+  right: 20px;
+  height: 300px;
+  width: 300px;
+  bottom: 100px;
+}
+@media (min-width: 1024px) {
+  .container-fixed2 .svg-left {
+    left: 20px;
+    height: 300px;
+    width: 300px;
+    top: 120px;
+  }
+  .container-fixed2 .svg-right {
+    right: 20px;
+    height: 300px;
+    width: 300px;
+    bottom: 150px;
+  }
+}
+@media (max-width: 1023.99px) {
+  .container-fixed2 .svg-left {
+    left: 20px;
+    height: 240px;
+    width: 240px;
+    top: 120px;
+  }
+  .container-fixed2 .svg-right {
+    right: 20px;
+    height: 240px;
+    width: 240px;
+    bottom: 120px;
+  }
+}
+@media (max-width: 768px) {
+  .container-fixed2 .svg-left {
+    left: 20px;
+    height: 200px;
+    width: 200px;
+    top: 140px;
+  }
+  .container-fixed2 .svg-right {
+    right: 20px;
+    height: 200px;
+    width: 200px;
+    bottom: 140px;
+  }
+}
+@media (max-width: 600px) {
+  .container-fixed2 .svg-left {
+    left: 20px;
+    height: 180px;
+    width: 180px;
+    top: 120px;
+  }
+  .container-fixed2 .svg-right {
+    right: 20px;
+    height: 180px;
+    width: 180px;
+    bottom: 120px;
+  }
+}
+@media (max-width: 450px) {
+  .container-fixed2 .svg-left {
+    left: 20px;
+    height: 160px;
+    width: 160px;
+    top: 120px;
+  }
+  .container-fixed2 .svg-right {
+    right: 20px;
+    height: 160px;
+    width: 160px;
+    bottom: 120px;
+  }
+  .content .jumbo-div-header {
+    font-size: 25px !important;
+  }
+}
+@media (max-width: 350px) {
+  .container-fixed2 .svg-left {
+    left: 20px;
+    height: 140px;
+    width: 140px;
+    top: 100px;
+  }
+  .container-fixed2 .svg-right {
+    right: 20px;
+    height: 140px;
+    width: 140px;
+  }
 }
 .header {
   display: flex;
@@ -71,18 +235,24 @@ body {
   }
 }
 .header .header-text {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
 }
 .header .svg-box {
   display: flex;
   flex-direction: row;
 }
-.header .svg-box svg {
+.header .svg-box div {
+  width: 40px;
+  height: 40px;
   margin: 0 10px;
-  width: 30px;
-  height: 30px;
+  position: relative;
+}
+.header .svg-box svg {
+  width: 40px;
+  height: 40px;
   cursor: pointer;
+  position: relative;
 }
 .content {
   display: flex;
@@ -102,15 +272,19 @@ body {
   font-family: "BlueReceipt sans";
   letter-spacing: 2px;
   margin: 20px 0;
+  color: white;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
 }
 .content .jumbo-div-text {
   text-align: center;
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 200;
   color: #eeeeee;
 }
 .content .button-div {
-  margin: 50px 20px;
+  margin: 50px 0px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -132,10 +306,10 @@ body {
   }
 }
 .follow-div {
-  background: #5c09bb;
+  background: #272727;
   border-radius: 20px;
   height: 100px;
-  box-shadow: 0 3px 10px 0 #430c81;
+  box-shadow: 0 3px 10px 0 #000;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -143,12 +317,17 @@ body {
   font-size: 18px;
   font-weight: bold;
   width: 100%;
-  margin: 0 20px;
+  margin: 10px 0px;
   margin-bottom: 40px;
 }
 .follow-div .socials {
   display: flex;
   flex-direction: row;
+}
+@media (max-width: 425px) {
+  .follow-div .span {
+    display: none;
+  }
 }
 .follow-div .socials svg {
   width: 40px;
@@ -157,4 +336,32 @@ body {
 }
 .socials > * {
   margin: 0 10px;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+.modal {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+}
+.modal button {
+  color: #444;
+  border-color: #444;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.modal p {
+  color: #444;
+  font-weight: bold;
 }
