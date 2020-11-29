@@ -1,40 +1,11 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-/* const password = "F79A7AEA178A69BA0F0847FF61BADEFD4773";
- */
-const backdrop = {
-  visible: { opacity: 1 },
-  hidden: { opacity: 0 },
-};
-
-const modal = {
-  hidden: { x: "-100vw", opacity: 0 },
-  visible: {
-    x: "0",
-    opacity: 1,
-    transition: { delay: 0.5 },
-  },
-};
-const navLi = {
-  hidden: {
-    x: "-100vw",
-  },
-  visible: {
-    x: "0",
-    transition: { delay: 0.8 },
-  },
-};
-const navLi2 = {
-  hidden: {
-    x: "-100vw",
-  },
-  visible: {
-    x: "0",
-    transition: { delay: 1.0 },
-  },
-};
 const Navigation = ({ showNav }) => {
+  const backdrop = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
+  };
   return (
     <AnimatePresence exitBeforeEnter>
       {showNav && (
@@ -46,14 +17,57 @@ const Navigation = ({ showNav }) => {
           exit="hidden"
           style={{ zIndex: "1000" }}
         >
-          <motion.div className="nav" variants={modal}>
-            <motion.div variants={navLi} initial="hidden" animate="visible">
-              Visit Our Website
-            </motion.div>
-            <motion.div variants={navLi2} initial="hidden" animate="visible">
-              Check out our other stuffs
-            </motion.div>
-          </motion.div>
+          <div>
+            <div class="rocket">
+              <div class="rocket-body">
+                <div class="body"></div>
+                <div class="fin fin-left"></div>
+                <div class="fin fin-right"></div>
+                <div class="window"></div>
+              </div>
+              <div class="exhaust-flame"></div>
+              <ul class="exhaust-fumes">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <ul class="star">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "100%",
+            }}
+          >
+            <h2
+              style={{
+                width: "100%",
+                textAlign: "center",
+                textTransform: "uppercase",
+                fontFamily: "Bluereceipt sans",
+              }}
+            >
+              Yay you clicked it !
+            </h2>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
