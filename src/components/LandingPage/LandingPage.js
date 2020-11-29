@@ -2,11 +2,10 @@ import React from "react";
 import { AwesomeButton } from "react-awesome-button";
 import "react-awesome-button/dist/themes/theme-red.css";
 import { Hamburger } from "./svg/Hamburger";
-import { Moon } from "./svg/Moon";
 import { Pen } from "./svg/Pen";
 import { PaperStack } from "./svg/PaperStack";
 
-export const LandingPage = ({ setShowModal }) => {
+export const LandingPage = ({ setShowModal, setShowNav, showNav }) => {
   return (
     <>
       <div className="container-fixed"></div>
@@ -14,12 +13,11 @@ export const LandingPage = ({ setShowModal }) => {
         <PaperStack />
         <Pen />
       </div>
-      <div>
+      <div style={{ background: "transparent" }}>
         <div className="header">
           <span className="header-text">JambEasy</span>
           <span className="svg-box">
-            <Moon />
-            <Hamburger />
+            <Hamburger setShowNav={setShowNav} showNav={showNav} />
           </span>
         </div>
         <div className="content">
@@ -28,7 +26,7 @@ export const LandingPage = ({ setShowModal }) => {
           </div>
           <div className="jumbo-div-text">
             JambEasy is coming soon. Subscribe here to get notified when the
-            website is completed
+            website and app are completed
           </div>
           <div className="button-div">
             <AwesomeButton
@@ -54,13 +52,15 @@ export const LandingPage = ({ setShowModal }) => {
                 viewBox="0 0 512.002 512.002"
               >
                 <circle
-                  style={{ fill: " #4e598f" }}
+                  style={{ fill: " none" }}
+                  stroke="#fff"
+                  strokeWidth="10px"
                   cx="256.001"
                   cy="256"
                   r="256"
                 />
                 <path
-                  style={{ fill: "#364270" }}
+                  style={{ fill: "none" }}
                   d="M511.596,241.7L391.019,121.085c-1.998,0.605-6.982-1.714-9.173-1.274
 	c-51.717,8.62-101.71,0-151.704,13.791c-24.135,6.896-25.859,36.202-34.478,55.165c-12.067,34.478-10.343,72.404-25.859,105.158
 	c-10.343,22.411-34.478,36.202-43.098,62.061c-2.875,10.785-2.705,24.379-5.956,34.69l120.98,120.922
@@ -112,9 +112,16 @@ export const LandingPage = ({ setShowModal }) => {
                 y="0px"
                 viewBox="0 0 512 512"
               >
-                <circle style={{ fill: "#65a2d9" }} cx="256" cy="256" r="256" />
+                <circle
+                  style={{ fill: " none" }}
+                  stroke="#fff"
+                  strokeWidth="10px"
+                  cx="256"
+                  cy="256"
+                  r="256"
+                />
                 <path
-                  style={{ fill: " #3a7ca5" }}
+                  style={{ fill: " none" }}
                   d="M393.014,139.326c-26.703,23.169-53.253,43.475-74.954,71.852
 	c-53.381,64.372-118.613,155.7-207.386,142.086l158.61,158.396c134.456-6.873,241.497-117.493,242.686-253.376L393.014,139.326z"
                 />
@@ -168,13 +175,15 @@ export const LandingPage = ({ setShowModal }) => {
                 viewBox="0 0 512.002 512.002"
               >
                 <circle
-                  style={{ fill: " #4376b1" }}
+                  style={{ fill: " none" }}
+                  stroke="#fff"
+                  strokeWidth="10px"
                   cx="256.001"
                   cy="256"
                   r="256"
                 />
                 <path
-                  style={{ fill: " #336699" }}
+                  style={{ fill: " none" }}
                   d="M511.016,233.634L394.729,117.198c-71.035,9.237-145.27,7.859-216.305,9.511
 	c-29.306,0-58.613,13.791-53.441,46.545c10.343,65.508,15.515,129.293,3.448,196.525c-1.9,8.545-5.897,17.089-11.117,25.059
 	L233.48,511.005c7.421,0.646,14.929,0.996,22.519,0.996c141.384,0,256-114.616,256-256

@@ -2,10 +2,14 @@ import React from "react";
 import { motion, useCycle } from "framer-motion";
 import { pathVariants1, pathVariants2 } from "../paths/pathVariants";
 
-export const Hamburger = () => {
+export const Hamburger = ({ setShowNav, showNav }) => {
   const [animation, cycleAnimation] = useCycle("visible", "visible2");
+  const hamburgerAction = () => {
+    setShowNav(!showNav);
+    cycleAnimation();
+  };
   return (
-    <div onClick={() => cycleAnimation()}>
+    <div onClick={hamburgerAction} style={{ zIndex: "10000" }}>
       <motion.svg viewBox="0 0 513 513" xmlns="http://www.w3.org/2000/svg">
         <g>
           <motion.path

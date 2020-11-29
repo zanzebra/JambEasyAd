@@ -11,7 +11,7 @@ export const pathVariants1 = {
     pathLength: 1,
     fill: "none",
     stroke: "#fff",
-    strokeWidth: "8px",
+    strokeWidth: "15px",
     transition: {
       duration: 2,
       ease: "easeInOut",
@@ -22,7 +22,7 @@ export const pathVariants1 = {
     pathLength: 1,
     fill: "none",
     stroke: "#fff",
-    strokeWidth: "8px",
+    strokeWidth: "15px",
     transition: {
       duration: 2,
       ease: "easeInOut",
@@ -44,7 +44,7 @@ export const pathVariants2 = {
     fill: "none",
     stroke: "#fff",
 
-    strokeWidth: "8px",
+    strokeWidth: "15px",
     transition: {
       duration: 2,
       ease: "easeInOut",
@@ -55,7 +55,7 @@ export const pathVariants2 = {
     pathLength: 0,
     fill: "none",
     stroke: "#fff",
-    strokeWidth: "8px",
+    strokeWidth: "15px",
     transition: {
       duration: 2,
       ease: "easeInOut",
@@ -86,7 +86,7 @@ export const pathVariants5 = {
     opacity: 0,
     fill: "none",
     stroke: "none",
-    strokeWidth: "1px",
+    strokeWidth: "0.5px",
     pathLength: 0,
   },
   visible: {
@@ -94,7 +94,7 @@ export const pathVariants5 = {
     pathLength: 1,
     fill: "none",
     stroke: "#fff",
-    strokeWidth: "1px",
+    strokeWidth: "0.5px",
     transition: {
       duration: 2,
       ease: "easeInOut",
