@@ -1,15 +1,10 @@
 import React from "react";
-import { motion, useCycle } from "framer-motion";
+import { motion } from "framer-motion";
 import { pathVariants1, pathVariants2 } from "../paths/pathVariants";
 
-export const Hamburger = ({ setShowNav, showNav }) => {
-  const [animation, cycleAnimation] = useCycle("visible", "visible2");
-  const hamburgerAction = () => {
-    setShowNav(!showNav);
-    cycleAnimation();
-  };
+export const Hamburger = () => {
   return (
-    <div onClick={hamburgerAction} style={{ zIndex: "10000" }}>
+    <div style={{ zIndex: "10000" }}>
       <motion.svg viewBox="0 0 513 513" xmlns="http://www.w3.org/2000/svg">
         <g>
           <motion.path
@@ -84,14 +79,14 @@ export const Hamburger = ({ setShowNav, showNav }) => {
           <motion.path
             variants={pathVariants2}
             initial="hidden"
-            animate={animation}
+            animate="visible"
             d="m256.777 2.483c-173.165 2.506-231.346 96.439-250.553 151.018-6.582 18.702 7.451 38.274 27.277 38.274h223.276 223.274c19.973 0 33.825-19.769 27.164-38.599-19.323-54.626-77.616-148.192-250.438-150.693z"
             fill="#fe9738"
           />
           <motion.path
             variants={pathVariants2}
             initial="hidden"
-            animate={animation}
+            animate="visible"
             d="m480.052 191.777h-2.469c6.725-7.5 9.493-18.419 5.744-29.038-19.328-54.636-77.62-148.195-250.442-150.695-44.709.64-81.763 7.386-112.443 17.974 34.792-15.981 79.335-26.714 136.336-27.54 172.822 2.51 231.115 96.07 250.442 150.695 6.652 18.832-7.201 38.604-27.168 38.604z"
             fill="#fe860a"
           />
@@ -100,7 +95,7 @@ export const Hamburger = ({ setShowNav, showNav }) => {
               <motion.path
                 variants={pathVariants2}
                 initial="hidden"
-                animate={animation}
+                animate="visible"
                 d="m185.299 81.89c-1.204 0-2.425-.291-3.559-.903-3.644-1.969-5.001-6.52-3.032-10.164l6.721-12.436c1.969-3.644 6.52-5.001 10.164-3.032s5.001 6.52 3.032 10.164l-6.721 12.436c-1.356 2.51-3.938 3.935-6.605 3.935z"
                 fill="#e57917"
               />
@@ -109,7 +104,7 @@ export const Hamburger = ({ setShowNav, showNav }) => {
               <motion.path
                 variants={pathVariants2}
                 initial="hidden"
-                animate={animation}
+                animate="visible"
                 d="m256.684 82.739c-4.142 0-7.5-3.358-7.5-7.5v-14.136c0-4.142 3.358-7.5 7.5-7.5s7.5 3.358 7.5 7.5v14.136c0 4.142-3.358 7.5-7.5 7.5z"
                 fill="#e57917"
               />
@@ -118,7 +113,7 @@ export const Hamburger = ({ setShowNav, showNav }) => {
               <motion.path
                 variants={pathVariants2}
                 initial="hidden"
-                animate={animation}
+                animate="visible"
                 d="m328.255 81.786c-2.587 0-5.104-1.34-6.495-3.739l-7.092-12.229c-2.078-3.583-.858-8.172 2.725-10.25s8.172-.858 10.25 2.725l7.092 12.229c2.078 3.583.858 8.172-2.725 10.25-1.184.688-2.477 1.014-3.755 1.014z"
                 fill="#e57917"
               />

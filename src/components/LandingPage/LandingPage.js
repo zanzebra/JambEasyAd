@@ -5,6 +5,30 @@ import { Hamburger } from "./svg/Hamburger";
 import { Pen } from "./svg/Pen";
 import { PaperStack } from "./svg/PaperStack";
 import { Helmet } from "react-helmet";
+import Slider from "./Slider/Slider";
+
+const SliderData = [
+  {
+    source:
+      "https://images.unsplash.com/photo-1546768292-fb12f6c92568?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+  },
+  {
+    source:
+      "https://images.unsplash.com/photo-1501446529957-6226bd447c46?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1489&q=80",
+  },
+  {
+    source:
+      "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+  },
+  {
+    source:
+      "https://images.unsplash.com/photo-1475189778702-5ec9941484ae?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1351&q=80",
+  },
+  {
+    source:
+      "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+  },
+];
 
 export const LandingPage = ({ setShowModal, setShowNav, showNav }) => {
   return (
@@ -33,9 +57,8 @@ export const LandingPage = ({ setShowModal, setShowNav, showNav }) => {
       </div>
       <div style={{ background: "transparent" }}>
         <div className="header">
-          <span className="header-text">JambEasy</span>
           <span className="svg-box">
-            <Hamburger setShowNav={setShowNav} showNav={showNav} />
+            <Hamburger />
           </span>
         </div>
         <div className="content">
@@ -265,6 +288,7 @@ export const LandingPage = ({ setShowModal, setShowNav, showNav }) => {
             </span>
           </div>
         </div>
+        <Slider slides={SliderData} />
       </div>
     </Fragment>
   );

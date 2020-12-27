@@ -1,0 +1,81 @@
+.slider {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px 0;
+  min-height: 500px;
+  background: transparent;
+  border-radius: 20px;
+}
+
+.image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  font-size: 3rem;
+  color: #fff;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-180deg);
+  background: rgba(255, 255, 255, 0.315);
+  border-radius: 50%;
+  box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.5);
+}
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  font-size: 3rem;
+  color: #fff;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.315);
+  border-radius: 50%;
+}
+.left-arrow svg,
+.right-arrow svg {
+  fill: #fff;
+  width: 30px;
+  height: 30px;
+}
+@media (max-width: 815px) {
+  .left-arrow svg,
+  .right-arrow svg {
+    fill: #000;
+  }
+}
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+  width: 100%;
+  max-width: 800px;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
