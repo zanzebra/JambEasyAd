@@ -19,7 +19,7 @@ const SliderData = [
   },
 ];
 
-export const LandingPage = ({ setShowModal, setShowNav, showNav }) => {
+export const LandingPage = ({ setShowModal }) => {
   return (
     <Fragment>
       <Helmet>
@@ -52,7 +52,7 @@ export const LandingPage = ({ setShowModal, setShowNav, showNav }) => {
         </div>
         <div className="content">
           <div className="jumbo-div-header">
-            JambEasy a prolific tool designed to help you succeed in JAMB
+            JambEasy is a prolific tool designed to help you succeed in JAMB
           </div>
           <div className="jumbo-div-text">
             JambEasy is coming soon. Subscribe here to get notified when the

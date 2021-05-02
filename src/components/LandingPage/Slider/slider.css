@@ -32,7 +32,7 @@
   justify-content: center;
   align-items: center;
   transform: rotate(-180deg);
-  background: rgba(255, 255, 255, 0.315);
+  background: rgba(255, 255, 255, 0.04);
   border-radius: 50%;
   box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.5);
 }
@@ -52,7 +52,7 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.315);
+  background: rgba(255, 255, 255, 0.04);
   border-radius: 50%;
 }
 .left-arrow svg,

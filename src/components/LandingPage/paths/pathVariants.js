@@ -3,7 +3,7 @@ export const pathVariants1 = {
     opacity: 0,
     fill: "none",
     stroke: "none",
-    strokeWidth: "8px",
+    strokeWidth: "1px",
     pathLength: 0,
   },
   visible: {
@@ -11,7 +11,7 @@ export const pathVariants1 = {
     pathLength: 1,
     fill: "none",
     stroke: "#fff",
-    strokeWidth: "15px",
+    strokeWidth: "1px",
     transition: {
       duration: 2,
       ease: "easeInOut",
@@ -20,9 +20,9 @@ export const pathVariants1 = {
   visible2: {
     opacity: 1,
     pathLength: 1,
-    fill: "none",
+    fill: "#fff",
     stroke: "#fff",
-    strokeWidth: "15px",
+    strokeWidth: "2px",
     transition: {
       duration: 2,
       ease: "easeInOut",
