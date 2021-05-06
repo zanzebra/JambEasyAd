@@ -14,9 +14,6 @@ const SliderData = [
   {
     source: "/img/slide2.jpg",
   },
-  {
-    source: "/img/slide3.jpg",
-  },
 ];
 
 export const LandingPage = ({ setShowModal }) => {
